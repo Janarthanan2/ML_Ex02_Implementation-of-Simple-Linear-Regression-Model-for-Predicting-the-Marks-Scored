@@ -32,37 +32,37 @@ df.head()
 df.tail()
 X=df.iloc[:,:-1].values
 print(X)
-Y=df.iloc[:,1].values
-print(Y)
+y=df.iloc[:,1].values
+print(y)
 
 from sklearn.model_selection import train_test_split
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=1/3,random_state=0)
 from sklearn.linear_model import LinearRegression
-regressor=LinearRegression()
-regressor.fit(X_train,Y_train)
-Y_pred=regressor.predict(X_test)
-print(Y_pred)
-print(Y_test)
+Regression = LinearRegression()
+Regression.fit(X_train,y_train)
+y_pred = Regression.predict(X_test)
+print(y_pred)
+print(y_test)
 
-plt.scatter(X_train,Y_train,color='orange')
-plt.plot(X_train,regressor.predict(X_train),color='red')
-plt.title("Hours vs Scores(Training Set)")
+plt.scatter(X_train,y_train,color='black')
+plt.plot(X_train,Regression.predict(X_train),color='purple')
+plt.title("Hours vs Scores(Training set)")
 plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
 
-plt.scatter(X_test,Y_test,color='purple')
-plt.plot(X_test,regressor.predict(X_test),color='black')
-plt.title("Hourse vs Scores(Test Set)")
+plt.scatter(X_test,y_test,color='red')
+plt.plot(X_train,Regression.predict(X_train),color='blue')
+plt.title("Hours vs Scores(Testing set)")
 plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
 
-mse=mean_squared_error(Y_test,Y_pred)
-print("Mean Square Error =",mse)
-mae=mean_absolute_error(Y_test,Y_pred)
-print("Mean Square Error =",mae)
-rmse=np.sqrt(mse)
+MSE=mean_squared_error(y_test,y_pred)
+print("Mean Square Error =",MSE)
+MAE=mean_absolute_error(y_test,y_pred)
+print('Mean Square Error = ',MAE)
+RMSE=np.sqrt(MSE)
 print("Root Mean Square Error =",rmse)
 ```
 ## Output:
