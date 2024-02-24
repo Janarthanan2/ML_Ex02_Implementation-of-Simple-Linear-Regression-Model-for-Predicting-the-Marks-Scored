@@ -66,7 +66,7 @@ RMSE=np.sqrt(MSE)
 print("Root Mean Square Error =",rmse)
 ```
 ## Output:
-
+    
 ### df.head():
 <img src="https://github.com/Janarthanan2/ML_Ex02_Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/119393515/cf811a1d-04c7-416b-8438-88898d9291b7" width=10%>
 
